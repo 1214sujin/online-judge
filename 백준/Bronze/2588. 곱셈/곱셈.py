@@ -1,0 +1,10 @@
+a = int(input())
+b = input()
+a0 = a * int(b[2])
+a1 = a * int(b[1])
+a2 = a * int(b[0])
+result = a0 + a1*10 + a2*100
+print(a0)
+print(a1)
+print(a2)
+print(result)
