@@ -1,21 +1,15 @@
 import sys
 
 def solution(a, b, c):
-    if a>b and a>c:
-        if a >= b+c: return 'Invalid'
-    if b>a and b>c:
-        if b >= a+c: return 'Invalid'
+    a, b, c = sorted([a, b, c])
     if c>a and c>b:
         if c >= a+b: return 'Invalid'
     
-    if a==b: 
-        if a==c:
-            return 'Equilateral'
-        else:
-            return 'Isosceles'
-    elif b==c:
+    if a==c:
+        return 'Equilateral'
+    elif a==b:
         return 'Isosceles'
-    elif a==c:
+    elif b==c:
         return 'Isosceles'
     else:
         return 'Scalene'
