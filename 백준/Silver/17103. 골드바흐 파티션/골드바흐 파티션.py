@@ -4,14 +4,11 @@ def 에라토스테네스(n):
     lst = [0, 0] + [i for i in range(2, n+1)]
     ans = []
     
-    i = 2
-    while i < len(lst):
-        for j in range(2*i, n+1, i):
-            lst[j] = 0
-        ans.append(i)
-        i += 1
-        while i < len(lst) and lst[i] == 0:
-            i += 1
+    for i in range(2, n+1):
+        if lst[i]:
+            ans.append(i)
+            for j in range(i*i, n+1, i):
+                lst[j] = 0
     
     return ans
 
